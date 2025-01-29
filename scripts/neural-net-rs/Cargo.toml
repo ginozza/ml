@@ -1,0 +1,6 @@
+[workspace]
+members = [
+  "consumer_binary",
+  "matrix",
+  "neural-network",
+]
