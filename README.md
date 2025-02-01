@@ -19,9 +19,9 @@ The repository is divided into several sections, aligned with the roadmap:
 
 - Programming and Data Processing
 
-- 4. Advanced Machine Learning
+- Advanced Machine Learning
 
-- 5. Projects and Practical Applications
+- Projects and Practical Applications
 
 ## Work in Progress
 This repository is **not** a finished product—there’s always room for improvement. Some areas may lack detail, some implementations might not be optimized, and there are many advanced concepts yet to be explored. The idea is to progressively build and refine this knowledge base while learning from mistakes and experiments.
