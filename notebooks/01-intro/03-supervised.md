@@ -351,3 +351,68 @@ $$
 - **Accuracy**: The proportion of correctly predicted instances among all instances.
 - **Precision, Recall, and F1-Score**: Especially important in imbalanced datasets to assess the quality of predictions for each class.
 - **Confusion Matrix**: A tabular representation showing the actual vs. predicted classifications, aiding in the visualization of model performance across classes.
+
+## Datasets
+
+In supervised learning, the available data is typically partitioned into distinct subsets: the **training dataset**, **validation dataset**, and **testing dataset**. These partitions serve different roles during the model development lifecycle and are essential for ensuring that the resulting model generalizes well to unseen data.
+
+### Training Dataset
+
+- **Purpose**: The training dataset is used to **learn the model parameters**. This is the dataset on which the model is directly fitted.
+- **Usage**: 
+  - The model iteratively adjusts its parameters (e.g., weights in a neural network or coefficients in linear regression) to minimize a loss function.
+  - Techniques such as gradient descent are applied on this data to find optimal parameters.
+- **Characteristics**:
+  - Typically constitutes the largest portion of the data.
+  - May include data augmentation or preprocessing steps to enhance learning.
+
+---
+
+### Validation Dataset
+
+- **Purpose**: The validation dataset is used to **tune hyperparameters** and **evaluate model performance during training** without biasing the final evaluation.
+- **Usage**:
+  - It provides an unbiased evaluation during the model selection process.
+  - Helps in preventing overfitting by enabling techniques such as early stopping.
+  - Common hyperparameters include learning rates, regularization strengths, and model architecture details.
+- **Characteristics**:
+  - Not used for training the model’s parameters.
+  - Offers a checkpoint to compare different models or configurations.
+
+---
+
+### Testing Dataset
+
+- **Purpose**: The testing dataset is used to **assess the final performance** of the fully-trained model.
+- **Usage**:
+  - This dataset is held out from the training and validation processes.
+  - It serves as an unbiased metric of model generalization to new, unseen data.
+- **Characteristics**:
+  - Often represents real-world data that the model will encounter in production.
+  - Evaluations on this dataset are used to report metrics such as accuracy, precision, recall, or mean squared error.
+
+---
+
+### Formal Perspective
+
+Assume we have a complete dataset $\mathcal{D}$. This dataset is partitioned as follows:
+
+- **Training Set**: $\mathcal{D}_{\text{train}}$
+- **Validation Set**: $\mathcal{D}_{\text{val}}$
+- **Testing Set**: $\mathcal{D}_{\text{test}}$
+
+The goal is to learn a model $ f(\mathbf{x}; \theta) $ where $\theta$ represents the model parameters. The training process involves solving:
+
+$$
+\theta^* = \arg\min_{\theta} \frac{1}{|\mathcal{D}_{\text{train}}|} \sum_{(\mathbf{x}, y) \in \mathcal{D}_{\text{train}}} L\big(f(\mathbf{x}; \theta), y\big)
+$$
+
+Once the optimal parameters $\theta^*$ are obtained, the validation dataset $\mathcal{D}_{\text{val}}$ is used to tune hyperparameters (e.g., regularization coefficient $\lambda$ in ridge regression) and make decisions such as early stopping. Finally, the testing dataset $\mathcal{D}_{\text{test}}$ provides an unbiased estimate of the model’s performance on unseen data.
+
+---
+
+### Summary
+
+- **Training Dataset**: Used for fitting the model's parameters.
+- **Validation Dataset**: Used for hyperparameter tuning and model selection, aiding in avoiding overfitting.
+- **Testing Dataset**: Used for final performance evaluation, ensuring that the model generalizes well to new data.
