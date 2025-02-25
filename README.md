@@ -27,7 +27,7 @@ The repository is divided into several sections, aligned with the roadmap:
 This repository is **not** a finished product—there’s always room for improvement. Some areas may lack detail, some implementations might not be optimized, and there are many advanced concepts yet to be explored. The idea is to progressively build and refine this knowledge base while learning from mistakes and experiments.
 
 > [!WARNING]  
-> You may be unable to see some formulas content, to solve it clone the repo in your local device and open it in VScode.
+> You may not be able to see the content of some formulas. To fix it, clone the repository to your local device, open it in VScode and press `Ctrl + Shift + V`.
 
 ## Contribution and Learning Approach
 While this is primarily a personal learning space, any constructive feedback, insights, or resources are welcome. The goal is to document my learning process in a way that can also benefit others.
